@@ -1,0 +1,40 @@
+.btn-default.btn-login {
+  color: white;
+  background-color: orange
+}
+
+.home {
+  text-align: center;
+}
+
+.container-home {
+  background-image: url("http://i.imgur.com/2VkQ4hT.jpg");
+  min-height: 100vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.home {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: white;
+  font-weight: 100;
+  font-size: 100;
+}
+
+h1.home {
+  font-size: 80px;
+  font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+
+a.btn.btn-lg.btn-default.btn-home {
+  background-color: transparent;
+  border-width: 2px;
+  color: #b47fCe;
+  font-weight: 100;
+  border-color: #60BFBF;
+  margin-top: 20px;
+}
+
+a.btn.btn-lg.btn-default.btn-home:hover {
+  opacity: 0.4;
+}
