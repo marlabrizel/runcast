@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'coveralls', require: false
 gem 'simplecov'
 gem 'hurley'
+gem 'omniauth-strava-oauth2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
