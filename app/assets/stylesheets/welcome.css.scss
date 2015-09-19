@@ -8,7 +8,9 @@
 }
 
 .container-home {
-  background-image: url("http://i.imgur.com/2VkQ4hT.jpg");
+  background-image: asset-url("shirts.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   padding-top: 30vh;
   text-align: center;
