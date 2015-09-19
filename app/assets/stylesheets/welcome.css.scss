@@ -30,13 +30,12 @@ h1.home {
 
 a.btn.btn-lg.btn-default.btn-home {
   background-color: transparent;
-  border-width: 2px;
   color: #b47fCe;
   font-weight: 100;
-  border-color: #60BFBF;
   margin-top: 20px;
 }
 
 a.btn.btn-lg.btn-default.btn-home:hover {
   opacity: 0.4;
+  color: yellow;
 }
