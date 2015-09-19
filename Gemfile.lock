@@ -127,9 +127,9 @@ GEM
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    omniauth-strava-oauth2 (0.0.2)
+    omniauth-strava (0.0.6)
       omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
+      omniauth-oauth2 (~> 1.0)
     pg (0.18.3)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -256,7 +256,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
-  omniauth-strava-oauth2
+  omniauth-strava
   pg
   pry
   rails (= 4.2.3)
