@@ -1,11 +1,11 @@
-.navbar-default {
+.main-navbar {
   background-color: #222;
   opacity: 0.8;
   border-color: transparent;
 }
 
 .navbar-default .navbar-brand {
-  color: #fe9f36;
+  color: #fec503;
   font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
 }
 
@@ -36,7 +36,7 @@
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #fff;
+  color: #fec503;
 }
 
 .navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
@@ -53,4 +53,10 @@
 .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
   color: #fff;
   background-color: #fec503;
+}
+
+.home-image {
+  width: 5rem;
+   height: 5rem;
+   overflow: auto;
 }

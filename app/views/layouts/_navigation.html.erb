@@ -1,6 +1,5 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default main-navbar">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -8,21 +7,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Runcast</a>
+            <a class="navbar-brand page-scroll navbar-logo" href="#page-top">Runcast</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li>
-                    <%= link_to "Log Out", logout_path, method: :destroy %>
-                </li>
+                <li><%= image_tag current_user.avatar, class: "img-rounded img-thumbnail home-image" %></li>
+                <li><%= link_to "Log Out", logout_path, method: :destroy %></li>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
 </nav>
