@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
+      user.sync_segments_from_strava
       redirect_to dashboard_path
     else
       redirect_to root_path

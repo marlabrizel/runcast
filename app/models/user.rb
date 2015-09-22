@@ -22,17 +22,18 @@ class User < ActiveRecord::Base
   end
 
   def sync_segments_from_strava
-    #these are really segments efforts but keeping naming to match model for now
     segment_efforts.each do |effort|
-      segments.create!(
-        name: effort["name"],
-        date: effort["start_date_local"],
-        elapsed_time: effort["elapsed_time"],
-        distance: effort["distance"],
-        start_lat: effort["segment"]["start_latitude"],
-        start_long: effort["segment"]["start_longitude"],
-        strava_id: effort["segment"]["id"]
-      )
+      segment = Segment.find_or_create_by(strava_id: effort["segment"]["id"])
+      segment.name = effort["name"],
+      segment.date = effort["start_date_local"],
+      segment.elapsed_time = effort["elapsed_time"],
+      segment.distance = effort["distance"],
+      segment.start_lat = effort["segment"]["start_latitude"],
+      segment.start_long = effort["segment"]["start_longitude"]
+      segment.user_id = self.id
+      segment.save!
+
+      segment
     end
   end
 
