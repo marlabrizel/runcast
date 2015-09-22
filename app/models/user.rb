@@ -41,5 +41,9 @@ class User < ActiveRecord::Base
     segments.pluck(:name).uniq
   end
 
+  def segment_personal_record(name)
+    segments.where(name: name).order('elapsed_time asc').first
+  end
+
   delegate :segment_efforts, to: :strava_client
 end
