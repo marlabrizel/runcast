@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
 
     user
   end
+
+  def strava_client
+    @service ||= StravaService.new(self)
+  end
+
+  delegate :pr_activity_list, to: :strava_client
 end

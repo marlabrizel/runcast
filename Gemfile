@@ -17,6 +17,7 @@ gem 'coveralls', require: false
 gem 'simplecov'
 gem 'hurley'
 gem 'omniauth-strava'
+gem 'strava-api-v3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

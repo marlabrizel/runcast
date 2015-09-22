@@ -6,11 +6,9 @@
           <label for="segmentPicker" class="col-sm-2 control-label segment-form-label">Select a Segment:</label>
           <div class="col-sm-6">
             <select class="form-control segment-dropdown-options">
-              <option>Chautaqua Loop</option>
-              <option>Cherry Creek Trail</option>
-              <option>Eagle's Nest</option>
-              <option>Boulder Creek Path</option>
-              <option>Chicago Lakefront Trail</option>
+              <% current_user.pr_activity_list.each do |activity| %>
+                <option><%= activity["name"] %></option>
+              <% end %>
             </select>
           </div>
         </div>
