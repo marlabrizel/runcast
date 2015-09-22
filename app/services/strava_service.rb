@@ -5,10 +5,8 @@ class StravaService
     @strava_connection ||= Strava::Api::V3::Client.new(:access_token => user.token)
   end
 
-  def pr_activity_list
-    segments = detailed_activities_list.flat_map { |activity| activity["segment_efforts"] }
-    segments.select { |segment| segment["achievements"].select { |seg| seg["type_id"] == 3 } }
-    # da.first["segment_efforts"].first['achievements'].first.include?('type_id')
+  def segment_efforts
+    detailed_activities_list.flat_map { |activity| activity["segment_efforts"] }
   end
 
   def detailed_activities_list
