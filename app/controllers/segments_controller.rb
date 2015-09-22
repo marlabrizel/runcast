@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class SegmentsController < ApplicationController
   before_action :authorize!
 
   def show

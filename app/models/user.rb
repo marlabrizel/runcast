@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
         start_lat: effort["segment"]["start_latitude"],
         start_long: effort["segment"]["start_longitude"],
         strava_id: effort["segment"]["id"]
-        )
+      )
     end
   end
 
