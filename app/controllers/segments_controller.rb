@@ -3,4 +3,8 @@ class SegmentsController < ApplicationController
 
   def show
   end
+
+  def find
+    # redirect_to dashboard_path
+  end
 end
