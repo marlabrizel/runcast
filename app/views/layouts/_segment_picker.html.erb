@@ -6,8 +6,8 @@
           <label for="segmentPicker" class="col-sm-2 control-label segment-form-label">Select a Segment:</label>
           <div class="col-sm-6">
             <select class="form-control segment-dropdown-options">
-              <% current_user.pr_activity_list.each do |activity| %>
-                <option><%= activity["name"] %></option>
+              <% current_user.segment_names.each do |name| %>
+                <option><%= name %></option>
               <% end %>
             </select>
           </div>

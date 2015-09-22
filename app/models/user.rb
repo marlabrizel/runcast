@@ -21,5 +21,24 @@ class User < ActiveRecord::Base
     @service ||= StravaService.new(self)
   end
 
-  delegate :pr_activity_list, to: :strava_client
+  def sync_segments_from_strava
+    #these are really segments efforts but keeping naming to match model for now
+    segment_efforts.each do |effort|
+      segments.create!(
+        name: effort["name"],
+        date: effort["start_date_local"],
+        elapsed_time: effort["elapsed_time"],
+        distance: effort["distance"],
+        start_lat: effort["segment"]["start_latitude"],
+        start_long: effort["segment"]["start_longitude"],
+        strava_id: effort["segment"]["id"]
+        )
+    end
+  end
+
+  def segment_names
+    segments.pluck(:name).uniq
+  end
+
+  delegate :segment_efforts, to: :strava_client
 end
