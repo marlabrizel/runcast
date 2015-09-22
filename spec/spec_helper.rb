@@ -1,7 +1,19 @@
+require 'webmock'
+require 'vcr'
 require 'simplecov'
 SimpleCov.start 'rails'
 require 'coveralls'
 Coveralls.wear!
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.filter_sensitive_data('<STRAVA_CLIENT_ID>') { ENV['STRAVA_CLIENT_ID'] }
+  config.filter_sensitive_data('<STRAVA_CLIENT_SECRET>') { ENV['STRAVA_CLIENT_SECRET'] }
+  config.filter_sensitive_data('<STRAVA_CLIENT_SECRET>') { ENV['STRAVA_CLIENT_SECRET'] }
+  config.filter_sensitive_data('<NCDC_TOKEN>') { ENV['NCDC_TOKEN'] }
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
