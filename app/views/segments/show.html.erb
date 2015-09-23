@@ -3,10 +3,10 @@
   <div class="row">
     <div class="col-md-5 pr-data">
       <h2 class="dashboard-header">Personal Record Summary</h2>
-      <p>Segment Distance: 2.3 Miles</p>
-      <p>Segment Time: 20 minutes</p>
+      <p>Segment Distance: <%= @pr.distance / 1609.34 if @pr %> miles</p>
+      <p>Segment Time: <%= @pr.elapsed_time/60.0 if @pr %> minutes</p>
       <p>Boulder, CO</p>
-      <p>November 3, 2013 9:12 am</p>
+      <p><%= @pr.date.strftime("%B %e, %Y at %I:%m %P") %></p>
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-5 pr-data">
