@@ -1,8 +1,8 @@
 class StravaService
   attr_reader :strava_connection
 
-  def initialize(user)
-    @strava_connection ||= Strava::Api::V3::Client.new(:access_token => user.token)
+  def initialize(token)
+    @strava_connection ||= Strava::Api::V3::Client.new(:access_token => token)
   end
 
   def segment_efforts

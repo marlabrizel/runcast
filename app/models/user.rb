@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def strava_client
-    @service ||= StravaService.new(self)
+    @service ||= StravaService.new(token)
   end
 
   def sync_segments_from_strava
