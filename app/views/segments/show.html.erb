@@ -3,8 +3,8 @@
   <div class="row">
     <div class="col-md-5 pr-data">
       <h2 class="dashboard-header">Personal Record Summary</h2>
-      <p>Segment Distance: <%= @pr.distance / 1609.34 if @pr %> miles</p>
-      <p>Segment Time: <%= @pr.elapsed_time/60.0 if @pr %> minutes</p>
+      <p>Segment Distance: <%= number_with_precision(@pr.distance / 1609.34, precision: 2) if @pr %> miles</p>
+      <p>Segment Time: <%= @pr.hours %>:<%= @pr.minutes %>:<%= @pr.seconds %></p>
       <p>Boulder, CO</p>
       <p><%= @pr.date.strftime("%B %e, %Y at %I:%m %P") %></p>
     </div>
