@@ -13,7 +13,11 @@
             </div>
           </div>
         </div>
-      <h1 class="segment-title"><%= @pr.name %></h1>
+      <% if @pr %>
+        <h1 class="segment-title"><%= @pr.name %></h1>
+      <% else %>
+        <h1 class="segment-title">Choose a segment to get started!</h1>
+      <% end %>
     </div>
     <div class="col-sm-2"></div>
   </div>
