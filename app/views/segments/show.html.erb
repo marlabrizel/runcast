@@ -5,17 +5,17 @@
     <div class="col-md-5 pr-data">
         <h2 class="dashboard-header">Personal Record Summary</h2>
         <p>Segment Distance: <%= number_with_precision(@pr.distance / 1609.34, precision: 2) %> miles</p>
-        <p>Segment Time: <%= @pr.hours %>:<%= @pr.minutes %>:<%= @pr.seconds %></p>
+        <p>Segment Time: <%= @pr.duration %></p>
         <p><%= @pr.city %>, <%= @pr.state %></p>
         <p><%= @pr.date.strftime("%B %e, %Y at %I:%m %P") %></p>
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-5 pr-data">
       <h2 class="dashboard-header">You Perform Your Best...</h2>
-      <p><i class="fa fa-clock-o"></i> In the morning</p>
+      <p><i class="fa fa-clock-o"></i><%= @pr.time_of_day %></p>
       <p><i class="fa fa-sun-o"></i> In 50 degrees F</p>
       <p><i class="fa fa-sun-o"></i> In Sunny Weather</p>
-      <p><i class="fa fa-sun-o"></i> In The Winter</p>
+      <p><i class="fa fa-sun-o"></i><%= @pr.season %></p>
     </div>
   </div>
   <% end %>
