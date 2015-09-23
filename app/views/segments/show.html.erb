@@ -6,7 +6,7 @@
         <h2 class="dashboard-header">Personal Record Summary</h2>
         <p>Segment Distance: <%= number_with_precision(@pr.distance / 1609.34, precision: 2) %> miles</p>
         <p>Segment Time: <%= @pr.hours %>:<%= @pr.minutes %>:<%= @pr.seconds %></p>
-        <p>Boulder, CO</p>
+        <p><%= @pr.city %>, <%= @pr.state %></p>
         <p><%= @pr.date.strftime("%B %e, %Y at %I:%m %P") %></p>
     </div>
     <div class="col-md-2"></div>

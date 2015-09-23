@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
       segment.date = effort["start_date_local"]
       segment.elapsed_time = effort["elapsed_time"]
       segment.distance = effort["distance"]
+      segment.city = effort["segment"]["city"]
+      segment.state = effort["segment"]["state"]
       segment.start_lat = effort["segment"]["start_latitude"]
       segment.start_long = effort["segment"]["start_longitude"]
       segment.user_id = self.id
