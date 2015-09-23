@@ -4,6 +4,8 @@ class CreateSegments < ActiveRecord::Migration
       t.string :name
       t.datetime :date
       t.integer :elapsed_time
+      t.string :city
+      t.string :state
       t.decimal :distance
       t.decimal :start_lat
       t.decimal :start_long
