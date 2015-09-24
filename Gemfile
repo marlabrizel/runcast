@@ -21,12 +21,10 @@ gem 'strava-api-v3'
 gem 'forecast_io'
 gem 'redis'
 gem 'sidekiq'
+# gem 'puma'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'
