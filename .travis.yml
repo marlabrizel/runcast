@@ -6,3 +6,10 @@ script:
   - bundle install
   - bundle exec rake db:setup
   - bundle exec rake
+
+env:
+  global:
+    - FORECAST_KEY=abc123
+
+services:
+  - redis-server
