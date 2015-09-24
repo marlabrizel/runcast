@@ -3,9 +3,9 @@
     <div class="col-md-12 segment-picker">
       <div class="form-group form-inline segment-dropdown">
         <div class="input-group">
-          <div class="col-sm-2"></div>
+          <div class="col-sm-1"></div>
             <label for="segmentPicker" class="col-sm-2 control-label form-horizontal segment-form-label">Select a Segment:</label>
-            <div class="col-sm-6">
+            <div class="col-sm-8">
               <%= form_tag(dashboard_find_path, method: :get) do %>
                 <%= select_tag "segments", options_for_select(current_user.segment_names), class: "form-control segment-dropdown-options" %>
                 <%= submit_tag "Go!", class: "btn btn-default segment-picker-button" %>
@@ -19,6 +19,6 @@
         <h1 class="segment-title">Choose a segment to get started!</h1>
       <% end %>
     </div>
-    <div class="col-sm-2"></div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
