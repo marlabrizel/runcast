@@ -83,6 +83,10 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
+    forecast_io (2.0.0)
+      faraday
+      hashie
+      multi_json
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -258,6 +262,7 @@ DEPENDENCIES
   coveralls
   figaro
   font-awesome-rails
+  forecast_io
   hurley
   jbuilder (~> 2.0)
   jquery-rails
