@@ -37,4 +37,9 @@ RSpec.configure do |config|
           }
         })
   end
+
+  def log_in
+    visit root_path
+    page.find(".login-button").click
+  end
 end
