@@ -20,6 +20,13 @@ class StravaSegmentSyncer
       segment.state = effort["segment"]["state"]
       segment.start_lat = effort["segment"]["start_latitude"]
       segment.start_long = effort["segment"]["start_longitude"]
+
+      forecast = ForecastIO.forecast(segment.start_lat, segment.start_long, time: segment.date.to_i).currently
+
+      segment.conditions = forecast.summary
+      segment.temperature = forecast.temperature
+      segment.humidity = forecast.humidity
+      segment.wind_speed = forecast.windSpeed
       segment.user_id = @user.id
       segment.save!
 

@@ -12,10 +12,10 @@
     <div class="col-md-2"></div>
     <div class="col-md-5 pr-data">
       <h2 class="dashboard-header">You Performed Your Best...</h2>
-      <p><i class="fa fa-clock-o"></i><%= @pr.time_of_day %></p>
-      <p><i class="fa fa-sun-o"></i> In <%= ForecastIO.forecast(@pr.start_lat, @pr.start_long, time: @pr.date.to_i).currently.temperature.round %>&deg; F &amp; <%= number_to_percentage(ForecastIO.forecast(@pr.start_lat, @pr.start_long, time: @pr.date.to_i).currently.humidity*100, precision: 0) %> humidity</p>
-      <p><i class="fa fa-sun-o"></i> In <%= ForecastIO.forecast(@pr.start_lat, @pr.start_long, time: @pr.date.to_i).currently.summary.downcase%> conditions</p>
-      <p><i class="fa fa-sun-o"></i><%= @pr.season %></p>
+      <p><i class="fa fa-clock-o"></i> <%= @pr.time_of_day %></p>
+      <p><i class="fa fa-sun-o"></i> In <%= @pr.temperature.round %>&deg;F &amp; <%= number_to_percentage(@pr.humidity * 100, precision: 0) %> humidity</p>
+      <p><i class="fa fa-sun-o"></i> In <%= @pr.conditions.downcase%> conditions</p>
+      <p><i class="fa fa-sun-o"></i> <%= @pr.season %></p>
     </div>
   </div>
   <% end %>
