@@ -19,6 +19,8 @@ gem 'hurley'
 gem 'omniauth-strava'
 gem 'strava-api-v3'
 gem 'forecast_io'
+gem 'redis'
+gem 'sidekiq'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
