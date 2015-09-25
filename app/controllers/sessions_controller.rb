@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       StravaWorker.perform_async(user.id)
-      redirect_to dashboard_path
+      user.processing!
+      redirect_to loading_path
     else
       redirect_to root_path
     end
@@ -13,6 +14,12 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to root_path
+  end
+
+  def loading
+    unless current_user.processing?
+      redirect_to dashboard_path
+    end
   end
 
   private

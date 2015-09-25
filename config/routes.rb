@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/auth/strava/callback', to: 'sessions#create'
+  get '/loading', to:'sessions#loading'
   delete '/logout', to: 'sessions#destroy'
   get '/dashboard', to: 'segments#show'
   get '/dashboard/find', to: 'segments#find'

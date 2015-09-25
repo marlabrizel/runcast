@@ -25,6 +25,18 @@ class User < ActiveRecord::Base
     segments.where(name: name).order('elapsed_time asc').first
   end
 
+  def processing!
+    Redis.current.set("user:#{id}:processing", "true")
+  end
+
+  def done_processing!
+    Redis.current.del("user:#{id}:processing")
+  end
+
+  def processing?
+    Redis.current.get("user:#{id}:processing") == "true"
+  end
+
   delegate :segment_efforts, to: :strava_client
 
   delegate :weather, to: :forecast_io_client
