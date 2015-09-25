@@ -21,6 +21,7 @@ gem 'strava-api-v3'
 gem 'forecast_io'
 gem 'redis'
 gem 'sidekiq'
+gem 'sinatra', :require => nil
 # gem 'puma'
 
 # Use ActiveModel has_secure_password
