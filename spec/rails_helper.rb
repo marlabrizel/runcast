@@ -4,7 +4,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'sidekiq/testing'
-Sidekiq::Testing.inline!
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -38,6 +37,12 @@ RSpec.configure do |config|
             :token => ENV['STRAVA_TOKEN'],
           }
         })
+  end
+
+  config.around :each, sidekiq_inline: true do |example|
+    Sidekiq::Testing.inline! do
+      example.run
+    end
   end
 
   def log_in

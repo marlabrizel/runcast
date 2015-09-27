@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "User Can Pick A Segment from Form", type: :feature, vcr: true do
+RSpec.describe "User Can Pick A Segment from Form", type: :feature, sidekiq_inline: true, vcr: true do
   context "as an authenticated user" do
     before do
       visit root_path
