@@ -6,9 +6,9 @@ RSpec.describe "User can log in with Strava OAuth", type: :feature, vcr: true do
       visit root_path
       page.find(".login-button").click
 
-      expect(current_path).to eq(dashboard_path)
+      expect(current_path).to eq(loading_path)
       expect(page).to have_content "Log Out"
-      expect(page).to have_content "Choose a segment to get started!"
+      expect(page).to have_content "We're syncing your data from Strava!"
     end
 
     it "must be logged into access the dashboard" do

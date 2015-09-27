@@ -8,6 +8,8 @@ RSpec.describe "User Can Pick A Segment from Form", type: :feature, sidekiq_inli
     end
 
     it "can pick a segment from the segment picker form" do
+      visit dashboard_path
+
       select "Simba", from: "Select a Segment:"
       click_on "Go!"
 

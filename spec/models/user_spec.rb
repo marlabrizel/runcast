@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
     it "returns a list of unique segment names" do
       expect(user.segment_names.class).to eq Array
       expect(user.segment_names.size).to eq 2
-      expect(user.segment_names).to eq ["Grand Traverse", "Vail Pass"]
+      expect(user.segment_names.sort).to eq ["Grand Traverse", "Vail Pass"]
     end
 
     it "finds a user's best time by segment name" do
