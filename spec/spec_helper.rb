@@ -11,8 +11,8 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<STRAVA_CLIENT_ID>') { ENV['STRAVA_CLIENT_ID'] }
   config.filter_sensitive_data('<STRAVA_CLIENT_SECRET>') { ENV['STRAVA_CLIENT_SECRET'] }
-  config.filter_sensitive_data('<STRAVA_CLIENT_SECRET>') { ENV['STRAVA_CLIENT_SECRET'] }
-  config.filter_sensitive_data('<NCDC_TOKEN>') { ENV['NCDC_TOKEN'] }
+  config.filter_sensitive_data('<STRAVA_TOKEN>') { ENV['STRAVA_TOKEN'] }
+  config.filter_sensitive_data('<FORECAST_KEY>') { ENV['FORECAST_KEY'] }
 end
 
 RSpec.configure do |config|
