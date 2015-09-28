@@ -10,6 +10,9 @@ script:
 env:
   global:
     - FORECAST_KEY=abc123
+    - STRAVA_CLIENT_ID=1234
+    - STRAVA_CLIENT_SECRET=def456
+    - STRAVA_TOKEN=ghi789
 
 services:
   - redis-server
