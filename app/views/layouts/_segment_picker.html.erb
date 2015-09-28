@@ -6,9 +6,9 @@
           <div class="col-sm-1"></div>
             <label for="segments" class="col-sm-2 control-label form-horizontal segment-form-label">Select a Segment:</label>
             <div class="col-sm-8">
-              <%= form_tag(dashboard_find_path, method: :get) do %>
-                <%= select_tag "segments", options_for_select(current_user.segment_names), class: "form-control segment-dropdown-options" %>
-                <%= submit_tag "Go!", class: "btn btn-default segment-picker-button" %>
+              <%= form_tag(dashboard_path, method: :get, id: 'segment-picker-form') do %>
+                <%= select_tag "segment_name", options_for_select(current_user.segment_names), class: "form-control segment-dropdown-options" %>
+                <%= submit_tag "Go!", class: "btn btn-default segment-picker-button", id: "segment-picker-submit-button" %>
               <% end %>
             </div>
           </div>
