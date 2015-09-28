@@ -9,8 +9,9 @@ RSpec.describe "User Can Pick A Segment from Form", type: :feature, sidekiq_inli
 
     it "can pick a segment from the segment picker form" do
       visit dashboard_path
+      expect(page).to have_content "Choose a segment to get started!"
 
-      select "Simba", from: "Select a Segment:"
+      select "Simba", from: "segment_name"
       click_on "Go!"
 
       expect(page).to have_content "Simba"
