@@ -22,6 +22,7 @@ gem 'redis'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'responders'
+gem 'newrelic_rpm'
 # gem 'puma'
 
 # Use ActiveModel has_secure_password
