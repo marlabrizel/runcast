@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924033202) do
+ActiveRecord::Schema.define(version: 20150930043552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 20150924033202) do
     t.float    "temperature"
     t.float    "humidity"
     t.float    "wind_speed"
+    t.text     "polyline"
+    t.decimal  "end_lat"
+    t.decimal  "end_long"
   end
 
   add_index "segments", ["user_id"], name: "index_segments_on_user_id", using: :btree
