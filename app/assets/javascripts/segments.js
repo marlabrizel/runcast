@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $(document).on('click', '#segment-picker-submit-button', function(event) {
     event.preventDefault();
     var target = $(event.target);
@@ -17,4 +18,3 @@ $(document).ready(function() {
       }
     });
   });
-});
