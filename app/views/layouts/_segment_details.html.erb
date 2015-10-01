@@ -1,4 +1,4 @@
-<div class="row" id="pr-segment-details">
+<div class="row" id="pr-segment-details" data-polyline="<%= @pr.polyline %>" data-start-lat="<%= @pr.start_lat %>" data-start-long="<%= @pr.start_long %>">
   <div class="col-md-12 segment-data">
     <div class="col-md-1"></div>
     <div class="col-md-5 pr-data">
@@ -24,33 +24,6 @@
   <div class="col-md-1"></div>
 </div>
 
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_BROWSER_KEY'] %>&callback=initMap&libraries=geometry">
-</script>
 <script type="text/javascript">
-function initMap() {
-  var centerLat = <%= @pr.start_lat %>
-  var centerLong = <%= @pr.start_long %>
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-    center: {lat: centerLat, lng: centerLong},
-    mapTypeId: google.maps.MapTypeId.TERRAIN
-  });
-
-  var path = "<%= @pr.polyline %>"
-  var decodedSets = google.maps.geometry.encoding.decodePath(path)
-
-  var activityCoordinates = decodedSets;
-
-  var activity = new google.maps.Polyline({
-    path: activityCoordinates,
-    geodesic: true,
-    strokeColor: '#FF0000',
-    strokeOpacity: 1.0,
-    strokeWeight: 2
-  });
-
-  activity.setMap(map);
-}
 </script>

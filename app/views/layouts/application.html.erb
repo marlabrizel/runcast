@@ -18,6 +18,9 @@
     </div>
   <% end %>
 <%= yield %>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_BROWSER_KEY'] %>&libraries=geometry">
+</script>
 
 </body>
 </html>
