@@ -19,8 +19,9 @@
   </div>
 </div>
 <div class="row map-div">
-  <div class="col-md-12" id="map"></div>
-</div>
+  <div class="col-md-1"></div>
+  <div class="col-md-10" id="map"></div>
+  <div class="col-md-1"></div>
 </div>
 
 <script async defer
@@ -28,9 +29,12 @@
 </script>
 <script type="text/javascript">
 function initMap() {
+  var centerLat = <%= @pr.start_lat %>
+  var centerLong = <%= @pr.start_long %>
+
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 3,
-    center: {lat: 0, lng: -180},
+    zoom: 13,
+    center: {lat: centerLat, lng: centerLong},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
 
